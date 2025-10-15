@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+</head>
+<body>
+    <h1>
+        Sistema de Verificação de país.
+    </h1>
+    País: <input type="string" name="txtpais" id="txtpais"> <Km>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+        var txtpais = window.document.querySelector('input#txtpais')
+        var res = window.document.querySelector('div#res')
+        var pais = String(txtpais.value)
+        res.innerHTML = `<p>Seu país atual é <strong>${pais}</strong></p>`
+        if (pais != 'Brasil'){
+            res.innerHTML += `<p>Você é <strong>ESTRANGEIRO!</strong></p>`
+        } else {
+        res.innerHTML += `<p>Você é <strong>BRASILEIRO!</strong></p>`
+        }
+        res.innerHTML += `<p>Seja bem vindo ao Bostil!</p>`
+    }
+    </script>
+</body>
+</html>
