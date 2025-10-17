@@ -41,17 +41,27 @@ function finalizar(){
         window.alert('Adicione valores antes de finalizar!')
     } else {
         let tot = valores.length
-        let maior = valores[0]
-        let menor = valores[0]
-        let soma = 0
-        let media = 0
-        for(let pos in valores){
-            soma += valores[pos]
-            if(valores[pos] > maior)
-            maior = valores[pos]
-            if (valores[pos] < menor)
-            menor = valores[pos]
+        let maior = valores[0];
+        let menor = valores[0];
+        let soma = 0;
+        let media = 0;
+        console.log(menor);
+
+        for(let valor_atual of valores){
+            soma += valor_atual
+            
+            if(valor_atual > maior){
+                maior = valor_atual
+            }
+            
+            if (valor_atual< menor){
+                menor = valor_atual
+                console.log(menor)
+            }
+            
         }
+        console.log('------------')
+
         media = soma / tot
         res.innerHTML = ''
         res.innerHTML += `<p>Ao todo, temos ${tot} números cadastrados. </p>`
